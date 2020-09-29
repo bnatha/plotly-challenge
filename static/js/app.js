@@ -3,7 +3,7 @@ function init() {
     var selector = d3.select("#selDataset");
     
     // Fill the dropdown from the list of Names
-    d3.json("../samples.json").then((data) => {
+    d3.json("../../samples.json").then((data) => {
     var subjectIds = data.names;
         subjectIds.forEach((id) => {selector.append("option").text(id).property("value", id);
         });
@@ -16,7 +16,7 @@ function init() {
   
 // Updating the metadata/demographics panel
 function updateMetadata(sample) {
-    d3.json("../samples.json").then((data) => {
+    d3.json("../../samples.json").then((data) => {
         var metadata = data.metadata;
         var filterArray = metadata.filter(sampleObject => sampleObject.id == sample);
         var result = filterArray[0];
@@ -30,7 +30,7 @@ function updateMetadata(sample) {
   
 // Updating the charts
 function updateCharts(sample) {    
-    d3.json("../samples.json").then((data) => {
+    d3.json("../../samples.json").then((data) => {
 
     // Defining plot variables
     var samples = data.samples;
